@@ -25,25 +25,30 @@
 			  <option value="K">Kelvin</option>
 			  <option value="R">Réaumur</option>
 			</select>
-		  </div>
-		  <br><button type="button" class="btn btn-primary">Convert</button>
+			</div>
+			
+		  <br><button type="button"class="btn btn-primary">Convert</button>
 		</form>
 	</div>
 	<div id="result" style="margin-top:10px;margin-left:10px; font-size: 20px; color:red;">
 	</div>
-	
 	<script>
 	    $(document).ready(function(){
 			$("button").click(function(){
 			   var t = $('#temp').val();//celsius
 			   var u = $('#unit').val();
 			   
-			   if(isNaN(t)){
+			   if(isNaN(t))
+			   {
+				   
 					msg = "Please verify whether the temperature value is correct!!!";
 					alert(msg);
 					return;
 			   }
-			   if(!(t >= -100 && t <= 100)){
+				
+			   if(!(t >= -100 && t <= 100))
+			   {
+				   
 					msg = "Tempurature entered (in Celsius) must be between 0 and 100 C'";
 					alert(msg);
 					return;
@@ -62,8 +67,7 @@
 					t1 = t * (4/5);
 					u1 = "Kelvin";
 			   }
-			   
-			   alert("Temperature is "+t1+" in "+u1);
+			   document.write("Temperature is "+t1+" in "+u1);
 			});
 		});
 	</script>
